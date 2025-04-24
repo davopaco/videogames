@@ -18,14 +18,19 @@ public class PauseGameController : MonoBehaviour
         }
     }
 
+
+    //Interaccion con tecla escape
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            //si esta pausado, lo reaunuda
             if (isPaused)
             {
                 ResumeGame();
             }
+
+            //si no lo pausa
             else
             {
                 Pause();
@@ -40,6 +45,7 @@ public class PauseGameController : MonoBehaviour
             uiImage.sprite = resumeSprite;
         }
 
+        //GameObjtect de pausa
         pausePanel.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
